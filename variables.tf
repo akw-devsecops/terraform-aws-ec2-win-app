@@ -15,7 +15,7 @@ variable "create_lb" {
   type = bool
 }
 
-variable "lb_ssl_certificate_id" {
+variable "certificate_arn" {
   type = string
   default = ""
 }
@@ -26,6 +26,11 @@ variable "vpc_id" {
 
 variable "pwsh_cmd" {
   type = string
+}
+
+variable "public_subnets" {
+  type = list(string)
+  default = [ ]
 }
 
 variable "ec2_instances" {

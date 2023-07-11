@@ -72,10 +72,10 @@ module "ec2_app_security_group" {
   
   ingress_with_source_security_group_id = var.create_lb ? [
   {
-    from_port   = 80
-    to_port     = 80
+    from_port   = 443
+    to_port     = 443
     protocol    = "tcp"
-    description = "HTTP"
+    description = "HTTPS from ALB"
     source_security_group_id = "${module.alb_http[0].security_group_id}"
   }] : []
 

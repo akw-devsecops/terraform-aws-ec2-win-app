@@ -16,7 +16,6 @@ No requirements.
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_alb_http"></a> [alb\_http](#module\_alb\_http) | terraform-aws-modules/alb/aws | ~> 8.0 |
-| <a name="module_alb_http_sg"></a> [alb\_http\_sg](#module\_alb\_http\_sg) | terraform-aws-modules/security-group/aws | ~> 4.0 |
 | <a name="module_ec2_app"></a> [ec2\_app](#module\_ec2\_app) | terraform-aws-modules/ec2-instance/aws | ~> 4.0 |
 | <a name="module_ec2_app_security_group"></a> [ec2\_app\_security\_group](#module\_ec2\_app\_security\_group) | terraform-aws-modules/security-group/aws | ~> 4.0 |
 | <a name="module_s3_codedeploy"></a> [s3\_codedeploy](#module\_s3\_codedeploy) | terraform-aws-modules/s3-bucket/aws | ~> 3.0 |
@@ -65,7 +64,8 @@ No requirements.
 | <a name="input_env"></a> [env](#input\_env) | n/a | `string` | n/a | yes |
 | <a name="input_pwsh_cmd"></a> [pwsh\_cmd](#input\_pwsh\_cmd) | n/a | `string` | n/a | yes |
 | <a name="input_vpc_id"></a> [vpc\_id](#input\_vpc\_id) | n/a | `string` | n/a | yes |
-| <a name="input_lb_ssl_certificate_id"></a> [lb\_ssl\_certificate\_id](#input\_lb\_ssl\_certificate\_id) | n/a | `string` | `""` | no |
+| <a name="input_certificate_arn"></a> [certificate\_arn](#input\_certificate\_arn) | n/a | `string` | `""` | no |
+| <a name="input_public_subnets"></a> [public\_subnets](#input\_public\_subnets) | n/a | `list(string)` | `[]` | no |
 | <a name="input_sg_cidr_range"></a> [sg\_cidr\_range](#input\_sg\_cidr\_range) | n/a | `string` | `""` | no |
 
 ## Outputs
