@@ -20,6 +20,11 @@ variable "internal_lb" {
   default = false
 }
 
+variable "lb_security_group_rules" {
+  type = object
+  default = null
+}
+
 variable "certificate_arn" {
   type = string
   default = ""
