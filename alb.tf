@@ -9,7 +9,7 @@ module "alb_http" {
   vpc_id             = var.vpc_id
   load_balancer_type = "application"
 
-  security_group_rules = var.lb_security_group_rules != null ? var.lb_security_group_rules : {
+  security_group_rules = var.lb_security_group_rules != {} ? var.lb_security_group_rules : {
     ingress_all_http = {
       type        = "ingress"
       from_port   = 80

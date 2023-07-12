@@ -21,8 +21,8 @@ variable "internal_lb" {
 }
 
 variable "lb_security_group_rules" {
-  type = object()
-  default = null
+  type = any
+  default = {}
 }
 
 variable "certificate_arn" {
