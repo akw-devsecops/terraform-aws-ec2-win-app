@@ -10,6 +10,7 @@ module "alb_http" {
   load_balancer_type = "application"
 
   subnets = var.public_subnets
+  internal = var.internal_lb
 
   target_groups = [
     {

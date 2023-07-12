@@ -15,6 +15,11 @@ variable "create_lb" {
   type = bool
 }
 
+variable "internal_lb" {
+  type = bool
+  default = false
+}
+
 variable "certificate_arn" {
   type = string
   default = ""
@@ -43,3 +48,4 @@ variable "ec2_instances" {
       tags = optional(map(string))
     }))
 }
+
