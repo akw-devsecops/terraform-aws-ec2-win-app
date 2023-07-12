@@ -21,7 +21,14 @@ variable "internal_lb" {
 }
 
 variable "lb_security_group_rules" {
-  type = object
+  type = map(object({
+      type        = string
+      from_port   = number
+      to_port     = number
+      protocol    = string
+      description = string
+      cidr_blocks = list(string)
+  }))
   default = null
 }
 
