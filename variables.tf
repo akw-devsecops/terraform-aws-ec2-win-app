@@ -54,3 +54,14 @@ variable "ec2_instances" {
     }))
 }
 
+variable "enable_rdp_access" {
+  description = "Determines whether to have RDP access"
+  type        = bool
+  default     = false
+}
+
+variable "rdp_access_cidr_ranges" {
+  description = "Limit RDP access to specific CIDR ranges"
+  type        = set(string)
+  default     = ["0.0.0.0/0"]
+}

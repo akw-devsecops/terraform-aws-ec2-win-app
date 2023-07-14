@@ -39,6 +39,7 @@ No requirements.
 | [aws_iam_role_policy_attachment.ec2_app_s3_codedeploy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
 | [aws_iam_role_policy_attachment.ec2_app_ssm_read](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
 | [aws_key_pair.ec2_app_key](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/key_pair) | resource |
+| [aws_security_group_rule.rdp](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule) | resource |
 | [aws_ssm_association.base_setup](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ssm_association) | resource |
 | [aws_ssm_association.install_code_deploy_agent](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ssm_association) | resource |
 | [aws_ssm_parameter.ec2_app_admin_pw](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ssm_parameter) | resource |
@@ -65,7 +66,9 @@ No requirements.
 | <a name="input_pwsh_cmd"></a> [pwsh\_cmd](#input\_pwsh\_cmd) | n/a | `string` | n/a | yes |
 | <a name="input_vpc_id"></a> [vpc\_id](#input\_vpc\_id) | n/a | `string` | n/a | yes |
 | <a name="input_certificate_arn"></a> [certificate\_arn](#input\_certificate\_arn) | n/a | `string` | `""` | no |
+| <a name="input_enable_rdp_access"></a> [enable\_rdp\_access](#input\_enable\_rdp\_access) | Determines whether to have RDP access | `bool` | `false` | no |
 | <a name="input_public_subnets"></a> [public\_subnets](#input\_public\_subnets) | n/a | `list(string)` | `[]` | no |
+| <a name="input_rdp_access_cidr_ranges"></a> [rdp\_access\_cidr\_ranges](#input\_rdp\_access\_cidr\_ranges) | Limit RDP access to specific CIDR ranges | `set(string)` | <pre>[<br>  "0.0.0.0/0"<br>]</pre> | no |
 | <a name="input_sg_cidr_range"></a> [sg\_cidr\_range](#input\_sg\_cidr\_range) | n/a | `string` | `""` | no |
 
 ## Outputs

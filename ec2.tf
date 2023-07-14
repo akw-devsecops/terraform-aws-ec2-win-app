@@ -83,6 +83,18 @@ module "ec2_app_security_group" {
   egress_rules  = ["all-tcp", "dns-udp"]
 }
 
+resource "aws_security_group_rule" "rdp" {
+  count = var.enable_rdp_access ? 1 : 0
+
+  description       = "RDP Access"
+  type              = "ingress"
+  security_group_id = module.ec2_app_security_group.security_group_id
+  protocol          = "tcp"
+  from_port         = 3389
+  to_port           = 3389
+  cidr_blocks       = var.rdp_access_cidr_ranges
+}
+
 resource "aws_volume_attachment" "ec2_app" {
   for_each = local.ec2_instances
 
