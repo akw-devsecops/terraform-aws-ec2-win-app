@@ -1,5 +1,7 @@
 # CodeDeploy
 data "aws_iam_policy_document" "code_deploy_role_assume" {
+  count = var.create_codedeploy ? 1 : 0
+
   version = "2012-10-17"
   statement {
     sid    = "AssumeFromCodeDeploy"
@@ -13,13 +15,17 @@ data "aws_iam_policy_document" "code_deploy_role_assume" {
 }
 
 resource "aws_iam_role" "code_deploy_role" {
+  count = var.create_codedeploy ? 1 : 0
+
   name               = "${local.fq_app_name}-CodeDeployRole"
-  assume_role_policy = data.aws_iam_policy_document.code_deploy_role_assume.json
+  assume_role_policy = data.aws_iam_policy_document.code_deploy_role_assume[0].json
 }
 
 resource "aws_iam_role_policy_attachment" "code_deploy_role" {
+  count = var.create_codedeploy ? 1 : 0
+
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSCodeDeployRole"
-  role       = aws_iam_role.code_deploy_role.name
+  role       = aws_iam_role.code_deploy_role[0].name
 }
 
 # EC2

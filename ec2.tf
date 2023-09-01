@@ -69,14 +69,14 @@ module "ec2_app_security_group" {
   vpc_id = var.vpc_id
 
   ingress_cidr_blocks = var.create_lb == false ? ["${var.sg_cidr_range}"] : null
-  
+
   ingress_with_source_security_group_id = var.create_lb ? [
-  {
-    from_port   = 443
-    to_port     = 443
-    protocol    = "tcp"
-    description = "HTTPS from ALB"
-    source_security_group_id = "${module.alb_http[0].security_group_id}"
+    {
+      from_port                = 443
+      to_port                  = 443
+      protocol                 = "tcp"
+      description              = "HTTPS from ALB"
+      source_security_group_id = "${module.alb_http[0].security_group_id}"
   }] : []
 
   ingress_rules = var.create_lb ? [] : ["http-80-tcp", "https-443-tcp"]
@@ -131,7 +131,9 @@ resource "aws_iam_role_policy_attachment" "ec2_app_amazon_ssm_managed_instance_c
 }
 
 resource "aws_iam_role_policy_attachment" "ec2_app_s3_codedeploy" {
-  policy_arn = aws_iam_policy.s3_codedeploy.arn
+  count = var.create_codedeploy ? 1 : 0
+
+  policy_arn = aws_iam_policy.s3_codedeploy[0].arn
   role       = aws_iam_role.ec2_app.name
 }
 
