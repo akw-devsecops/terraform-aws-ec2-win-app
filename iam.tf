@@ -18,7 +18,7 @@ resource "aws_iam_role" "code_deploy_role" {
   count = var.create_codedeploy ? 1 : 0
 
   name               = "${local.fq_app_name}-CodeDeployRole"
-  assume_role_policy = data.aws_iam_policy_document.code_deploy_role_assume.json
+  assume_role_policy = data.aws_iam_policy_document.code_deploy_role_assume[0].json
 }
 
 resource "aws_iam_role_policy_attachment" "code_deploy_role" {
