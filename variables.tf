@@ -25,6 +25,12 @@ variable "lb_security_group_rules" {
   default = {}
 }
 
+variable "create_codedeploy" {
+  description = "Specifies if to deploy codedeploy"
+  type = bool
+  default = true
+}
+
 variable "certificate_arn" {
   type = string
   default = ""

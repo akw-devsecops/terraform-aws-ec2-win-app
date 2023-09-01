@@ -66,7 +66,10 @@ No requirements.
 | <a name="input_pwsh_cmd"></a> [pwsh\_cmd](#input\_pwsh\_cmd) | n/a | `string` | n/a | yes |
 | <a name="input_vpc_id"></a> [vpc\_id](#input\_vpc\_id) | n/a | `string` | n/a | yes |
 | <a name="input_certificate_arn"></a> [certificate\_arn](#input\_certificate\_arn) | n/a | `string` | `""` | no |
+| <a name="input_create_codedeploy"></a> [create\_codedeploy](#input\_create\_codedeploy) | Specifies if to deploy codedeploy | `bool` | `true` | no |
 | <a name="input_enable_rdp_access"></a> [enable\_rdp\_access](#input\_enable\_rdp\_access) | Determines whether to have RDP access | `bool` | `false` | no |
+| <a name="input_internal_lb"></a> [internal\_lb](#input\_internal\_lb) | n/a | `bool` | `false` | no |
+| <a name="input_lb_security_group_rules"></a> [lb\_security\_group\_rules](#input\_lb\_security\_group\_rules) | n/a | `any` | `{}` | no |
 | <a name="input_public_subnets"></a> [public\_subnets](#input\_public\_subnets) | n/a | `list(string)` | `[]` | no |
 | <a name="input_rdp_access_cidr_ranges"></a> [rdp\_access\_cidr\_ranges](#input\_rdp\_access\_cidr\_ranges) | Limit RDP access to specific CIDR ranges | `set(string)` | <pre>[<br>  "0.0.0.0/0"<br>]</pre> | no |
 | <a name="input_sg_cidr_range"></a> [sg\_cidr\_range](#input\_sg\_cidr\_range) | n/a | `string` | `""` | no |
