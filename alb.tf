@@ -11,7 +11,7 @@ module "alb_http" {
 
   security_group_rules = var.lb_security_group_rules
 
-  subnets = var.public_subnets
+  subnets  = var.public_subnets
   internal = var.internal_lb
 
   target_groups = [

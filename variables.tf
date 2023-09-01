@@ -7,7 +7,7 @@ variable "app_name" {
 }
 
 variable "sg_cidr_range" {
-  type = string
+  type    = string
   default = ""
 }
 
@@ -16,23 +16,23 @@ variable "create_lb" {
 }
 
 variable "internal_lb" {
-  type = bool
+  type    = bool
   default = false
 }
 
 variable "lb_security_group_rules" {
-  type = any
+  type    = any
   default = {}
 }
 
 variable "create_codedeploy" {
   description = "Specifies if to deploy codedeploy"
-  type = bool
-  default = true
+  type        = bool
+  default     = true
 }
 
 variable "certificate_arn" {
-  type = string
+  type    = string
   default = ""
 }
 
@@ -45,19 +45,19 @@ variable "pwsh_cmd" {
 }
 
 variable "public_subnets" {
-  type = list(string)
-  default = [ ]
+  type    = list(string)
+  default = []
 }
 
 variable "ec2_instances" {
-    type =  map(object({
-      ami = optional(string) # "ami-0cf9380844da84d7e" # Microsoft Windows Server 2022 Base 
-      ec2_instance_type = optional(string) # "t3.medium"
-      root_block_size = optional(number) # 60
-      secondary_disk_size = optional(number) # 40
-      subnet_name = string
-      tags = optional(map(string))
-    }))
+  type = map(object({
+    ami                 = optional(string) # "ami-0cf9380844da84d7e" # Microsoft Windows Server 2022 Base 
+    ec2_instance_type   = optional(string) # "t3.medium"
+    root_block_size     = optional(number) # 60
+    secondary_disk_size = optional(number) # 40
+    subnet_name         = string
+    tags                = optional(map(string))
+  }))
 }
 
 variable "enable_rdp_access" {
