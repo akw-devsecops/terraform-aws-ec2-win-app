@@ -30,5 +30,5 @@ resource "aws_iam_policy" "s3_codedeploy" {
   
   name        = "s3_codedeploy_${local.fq_app_name}"
   description = "Policy to access the ${local.fq_app_name}-codedeploy bucket"
-  policy      = data.aws_iam_policy_document.s3_codedeploy.json
+  policy      = data.aws_iam_policy_document.s3_codedeploy[0].json
 }
