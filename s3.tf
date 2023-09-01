@@ -21,7 +21,7 @@ data "aws_iam_policy_document" "s3_codedeploy" {
   statement {
     effect    = "Allow"
     actions   = ["s3:GetObject", "s3:PutObject", "s3:DeleteObject"]
-    resources = ["${module.s3_codedeploy.s3_bucket_arn}/*"]
+    resources = ["${module.s3_codedeploy[0].s3_bucket_arn}/*"]
   }
 }
 
