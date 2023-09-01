@@ -133,7 +133,7 @@ resource "aws_iam_role_policy_attachment" "ec2_app_amazon_ssm_managed_instance_c
 resource "aws_iam_role_policy_attachment" "ec2_app_s3_codedeploy" {
   count = var.create_codedeploy ? 1 : 0
   
-  policy_arn = aws_iam_policy.s3_codedeploy.arn
+  policy_arn = aws_iam_policy.s3_codedeploy[0].arn
   role       = aws_iam_role.ec2_app.name
 }
 
