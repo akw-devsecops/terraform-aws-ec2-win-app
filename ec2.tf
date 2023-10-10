@@ -68,7 +68,7 @@ module "ec2_app_security_group" {
 
   vpc_id = var.vpc_id
 
-  ingress_cidr_blocks = var.create_lb == false ? ["${var.sg_cidr_range}"] : null
+  ingress_cidr_blocks = var.create_lb == false ? ["${var.sg_cidr_range}"] : []
 
   ingress_with_source_security_group_id = var.create_lb ? [
     {
