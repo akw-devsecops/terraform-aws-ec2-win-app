@@ -72,6 +72,11 @@ variable "rdp_access_cidr_ranges" {
   default     = ["0.0.0.0/0"]
 }
 
+variable "attach_waf_to_alb" {
+  type    = bool
+  default = true
+}
+
 variable "web_acl_arn" {
   description = "The Amazon Resource Name (ARN) of the Web ACL that you want to associate with the resource"
   type        = string

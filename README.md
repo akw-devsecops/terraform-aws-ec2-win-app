@@ -66,6 +66,7 @@ No requirements.
 | <a name="input_env"></a> [env](#input\_env) | n/a | `string` | n/a | yes |
 | <a name="input_pwsh_cmd"></a> [pwsh\_cmd](#input\_pwsh\_cmd) | n/a | `string` | n/a | yes |
 | <a name="input_vpc_id"></a> [vpc\_id](#input\_vpc\_id) | n/a | `string` | n/a | yes |
+| <a name="input_attach_waf_to_alb"></a> [attach\_waf\_to\_alb](#input\_attach\_waf\_to\_alb) | n/a | `bool` | `true` | no |
 | <a name="input_certificate_arn"></a> [certificate\_arn](#input\_certificate\_arn) | n/a | `string` | `""` | no |
 | <a name="input_create_codedeploy"></a> [create\_codedeploy](#input\_create\_codedeploy) | Specifies if to deploy codedeploy | `bool` | `true` | no |
 | <a name="input_enable_rdp_access"></a> [enable\_rdp\_access](#input\_enable\_rdp\_access) | Determines whether to have RDP access | `bool` | `false` | no |
