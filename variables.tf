@@ -71,3 +71,9 @@ variable "rdp_access_cidr_ranges" {
   type        = set(string)
   default     = ["0.0.0.0/0"]
 }
+
+variable "web_acl_arn" {
+  description = "The Amazon Resource Name (ARN) of the Web ACL that you want to associate with the resource"
+  type        = string
+  default     = ""
+}
