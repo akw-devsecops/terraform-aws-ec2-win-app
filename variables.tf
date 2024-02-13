@@ -74,7 +74,7 @@ variable "rdp_access_cidr_ranges" {
 
 variable "attach_waf_to_alb" {
   type    = bool
-  default = true
+  default = false
 }
 
 variable "web_acl_arn" {
