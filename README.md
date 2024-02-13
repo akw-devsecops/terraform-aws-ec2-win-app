@@ -62,7 +62,7 @@ No requirements.
 |------|-------------|------|---------|:--------:|
 | <a name="input_app_name"></a> [app\_name](#input\_app\_name) | n/a | `string` | n/a | yes |
 | <a name="input_create_lb"></a> [create\_lb](#input\_create\_lb) | n/a | `bool` | n/a | yes |
-| <a name="input_ec2_instances"></a> [ec2\_instances](#input\_ec2\_instances) | n/a | <pre>map(object({<br>      ami = optional(string) # "ami-0cf9380844da84d7e" # Microsoft Windows Server 2022 Base <br>      ec2_instance_type = optional(string) # "t3.medium"<br>      root_block_size = optional(number) # 60<br>      secondary_disk_size = optional(number) # 40<br>      subnet_name = string<br>      tags = optional(map(string))<br>    }))</pre> | n/a | yes |
+| <a name="input_ec2_instances"></a> [ec2\_instances](#input\_ec2\_instances) | n/a | <pre>map(object({<br>    ami                 = optional(string) # "ami-0cf9380844da84d7e" # Microsoft Windows Server 2022 Base <br>    ec2_instance_type   = optional(string) # "t3.medium"<br>    root_block_size     = optional(number) # 60<br>    secondary_disk_size = optional(number) # 40<br>    subnet_name         = string<br>    tags                = optional(map(string))<br>  }))</pre> | n/a | yes |
 | <a name="input_env"></a> [env](#input\_env) | n/a | `string` | n/a | yes |
 | <a name="input_pwsh_cmd"></a> [pwsh\_cmd](#input\_pwsh\_cmd) | n/a | `string` | n/a | yes |
 | <a name="input_vpc_id"></a> [vpc\_id](#input\_vpc\_id) | n/a | `string` | n/a | yes |
